@@ -73,14 +73,56 @@
 }
 
 .title{
-    background-color: red;
+    
     margin-right: 86px;
+    font-weight: 400;
 
 }
 
 .location{
     padding-left: 10px;
     border-left: 1px solid wheat;
+    font-weight: 400;
 
     
+}
+
+
+/*side-bar*/
+
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(219, 166, 31);
+    border-radius: 20px;
+    margin: 10px;
+    margin-right: 0px;
+    height: 85vh;
+  
+}
+
+.side-bar .link{
+    background-color: pink;
+    flex-grow: 1;
+    text-align: center;
+    padding-top: 10px;
+    
+}
+
+.side-bar .link:hover{
+    background-color: rgb(128, 101, 106);
+}
+
+.side-bar :first-child{
+    border-top-left-radius: 20px;
+}
+
+.side-bar :last-child{
+    border-bottom-left-radius: 20px;
+}
+
+.side-bar a{
+    text-decoration: none;
+    color: rgb(21, 21, 21);
 }
