@@ -161,7 +161,6 @@
                             <td class="name"></td>
                             <td class="position"></td>
                             <td class="contact_number"></td>
-
                             <td class = "actions">      
                             <button class="delete-btn">Delete</button>
                             <button class="edit-btn">Edit</button>
@@ -180,85 +179,97 @@
 
 <!---------MODALS-------------------------------------------------------------------------------------------------------------->        
 
-     <div class="modal" id="modal">
-                <div class="modal-content">
+     <div class="add-modal" id="add-modal">
+
+                <div class="add-modal-content">
                     <span class="close">&times;</span>
-                    <h2 class="modal-title">Add a Character</h2>
+                    <h2 class="modal-title">Add Staff Member</h2>
 
-                    <form action="" id="addCharacterForm" enctype="multipart/form-data">
+                    <form action="" id="addForm" enctype="multipart/form-data">
 
-                        <!-- <label for="profile">Character Image:</label>
-                        <input type="file" id="profile" name="profile" accept="image/*"> -->
-
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required><br>
-
-                        <label for="title">Title:</label>
-                        <input type="text" id="title" name="title" required><br>
-
-                        <label for="alignment">Alignment:</label>
-                        <select type="text" id="alignment" name="alignment" required><br>
-                            <option value="Violence">Violence</option>
-                            <option value="Serenity">Serenity</option>
-                            <option value="Obsession">Obsession</option>
-                            <option value="Suffering">Suffering</option>
-                            <option value="Horror">Horror</option>
-                            <option value="Truth">Truth</option>
-                        </select>
-
-                        <label for="timeline">Timeline: </label>
-                        <input type="text" id="timeline" name="timeline"><br>
-
-                        <label for="race">Race: </label>
-                        <input type="text" id="race" name="race"><br>
+                        <label for="Name">First Name:</label>
+                        <input type="text" id="first_name" name="first_name" required><br>
+        
+                        <label for="Name">Middle Name:</label>
+                        <input type="text" id="middle_name" name="middle_name" required><br>
+        
+                        <label for="Name">Last Name:</label>
+                        <input type="text" id="last_name" name="last_name" required><br>
+        
+                        <label for="title">Gender:</label>
+                        <input type="text" id="gender" name="gender"><br>
+        
+                        <label for="title">Purok:</label>
+                        <input type="text" id="purok_assigned" name="purok_assigned"><br>
+        
+                        <label for="title">Position:</label>
+                        <input type="text" id="position" name="position"><br>
+        
+                        <label for="title">Civil Status:</label>
+                        <input type="text" id="civil_status" name="civil_status"><br>
+        
+                        <label for="title">Age:</label>
+                        <input type="number" id="age" name="age"><br>
+        
+                        <label for="title">Contact #:</label>
+                        <input type="text" id="contact_number" name="contact_number"><br>
 
                         <button type="submit">Add Character</button>
                     </form>
                 </div>
-            </div>
+
+     </div>
 
 
 
+     <div id="edit-modal" class = "edit-modal" data-id="">
+                
+        <div class="edit-modal-content">
+        <span class="close-edit" id = "close-edit">&times;</span>
+        <h3>Edit Form</h3>
+            <form action="" id="edit-form">
+                <input type="text" id="edit-staff_id" name="id" style="display:none"><br>
 
-            <div class="modal" id="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2 class="modal-title">Add a Character</h2>
+                <label for="Name">Name:</label>
+                <input type="text" id="edit-first_name" name="name" required><br>
 
-                    <form action="" id="addCharacterForm" enctype="multipart/form-data">
+                <label for="Name">Name:</label>
+                <input type="text" id="edit-middle_name" name="name" required><br>
 
-                        <!-- <label for="profile">Character Image:</label>
-                        <input type="file" id="profile" name="profile" accept="image/*"> -->
+                <label for="Name">Name:</label>
+                <input type="text" id="edit-last_name" name="name" required><br>
 
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required><br>
+                <!-- <label for="title">Title:</label>
+                <input type="text" id="edit-birthdate" name="title"><br>
+                 -->
+                <label for="title">Title:</label>
+                <input type="text" id="edit-gender" name="title"><br>
 
-                        <label for="title">Title:</label>
-                        <input type="text" id="title" name="title" required><br>
+                <label for="title">Title:</label>
+                <input type="text" id="edit-purok_assigned" name="title"><br>
 
-                        <label for="alignment">Alignment:</label>
-                        <select type="text" id="alignment" name="alignment" required><br>
-                            <option value="Violence">Violence</option>
-                            <option value="Serenity">Serenity</option>
-                            <option value="Obsession">Obsession</option>
-                            <option value="Suffering">Suffering</option>
-                            <option value="Horror">Horror</option>
-                            <option value="Truth">Truth</option>
-                        </select>
+                <label for="title">Title:</label>
+                <input type="text" id="edit-position" name="title"><br>
 
-                        <label for="timeline">Timeline: </label>
-                        <input type="text" id="timeline" name="timeline"><br>
+                <label for="title">Title:</label>
+                <input type="text" id="edit-civil_status" name="title"><br>
 
-                        <label for="race">Race: </label>
-                        <input type="text" id="race" name="race"><br>
+                <label for="title">Title:</label>
+                <input type="text" id="edit-image" name="title"><br>
 
-                        <button type="submit">Add Character</button>
-                    </form>
-                </div>
-            </div>
+                <label for="title">Title:</label>
+                <input type="text" id="edit-age" name="title"><br>
 
+                <label for="title">Title:</label>
+                <input type="text" id="edit-contact_number" name="title"><br>
 
+                <label for="title">Title:</label>
+                <input type="text" id="edit-signature" name="title"><br>
 
+                <button type = "submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
 
 
 

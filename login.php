@@ -21,8 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($position =='Admin'){
             header('Location: dashboard.html');
             exit();
-   
+            
         }
+
+
         else{
             echo "<script>
         alert('Incorrect Credentials!');
