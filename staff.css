@@ -1,0 +1,49 @@
+.staff-table{
+
+    text-align: left;
+    width: 80%;
+
+   border-collapse: collapse;
+    padding: 40px;    
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+
+
+.staff-table th{
+    background-color: #3E4BBA;
+    padding: 10px;
+    /* color: aliceblue; */
+}
+
+
+
+.staff-table td{
+    padding: 10px;
+}
+
+
+
+.table-container{
+    padding: 10px;
+    
+    /* background-color: red; */
+    /* display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: fit-content;
+    padding: 10px;
+    height: 400px;
+    max-height: 500px;
+    overflow-y: auto; */
+
+}
+
+
+.main-top-staff{
+    
+    display: flex;
+    flex-wrap: wrap;
+    background-color: beige;
+
+}
