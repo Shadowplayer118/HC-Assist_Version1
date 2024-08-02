@@ -188,7 +188,7 @@
                     <form action="" id="addForm" enctype="multipart/form-data">
 
                         <label for="Name">First Name:</label>
-                        <input type="text" id="first_name" name="first_name" required><br>
+                        <input type="text" id="first_name" name="first_name" required>
         
                         <label for="Name">Middle Name:</label>
                         <input type="text" id="middle_name" name="middle_name" required><br>
@@ -234,45 +234,47 @@
                 <input type="text" id="edit-staff_id" name="staff_id" style="display:none"><br>
 
                 <label for="Name">First Name:</label>
-                <input type="text" id="edit-first_name" name="first_name" required><br>
+                <input type="text" id="edit-first_name" name="first_name" required disabled="true"><br>
 
                 <label for="Name">Middle Name:</label>
-                <input type="text" id="edit-middle_name" name="middle_name" required><br>
+                <input type="text" id="edit-middle_name" name="middle_name" required disabled="true"><br>
 
                 <label for="Name">Last Name:</label>
-                <input type="text" id="edit-last_name" name="last_name" required><br>
+                <input type="text" id="edit-last_name" name="last_name" required disabled="true"><br>
 
                 <!-- <label for="title">Title:</label>
                 <input type="text" id="edit-birthdate" name="title"><br>
                  -->
                 <label for="title">Gender:</label>
-                <input type="text" id="edit-gender" name="gender"><br>
+                <input type="text" id="edit-gender" name="gender" disabled="true"><br>
 
                 <label for="title">Purok Assigned:</label>
-                <input type="text" id="edit-purok_assigned" name="purok-assigned"><br>
+                <input type="text" id="edit-purok_assigned" name="purok-assigned" disabled="true"><br>
 
                 <label for="title">Position:</label>
-                <input type="text" id="edit-position" name="position"><br>
+                <input type="text" id="edit-position" name="position" disabled="true"><br>
 
                 <label for="title">Civil Status:</label>
-                <input type="text" id="edit-civil_status" name="civil_status"><br>
+                <input type="text" id="edit-civil_status" name="civil_status" disabled="true"><br>
 
                 <label for="title">Image:</label>
-                <input type="text" id="edit-image" name="image"><br>
+                <input type="text" id="edit-image" name="image" disabled="true"><br>
 
                 <label for="title">Age</label>
-                <input type="text" id="edit-age" name="age"><br>
+                <input type="text" id="edit-age" name="age" disabled="true"><br>
 
                 <label for="title">Contact #:</label>
-                <input type="text" id="edit-contact_number" name="contact_number"><br>
+                <input type="text" id="edit-contact_number" name="contact_number" disabled="true"><br>
 
                 <label for="title">Signature:</label>
-                <input type="text" id="edit-signature" name="signature"><br>
+                <input type="text" id="edit-signature" name="signature" disabled="true"><br>
 
                 
 
-                <button type = "submit">Save Changes</button>
+                <button type = "submit" id="save-changes" disabled="true">Save Changes</button>
             </form>
+            <button id = "allow-edit">Edit</button>
+
         </div>
     </div>
 

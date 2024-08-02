@@ -206,3 +206,20 @@ $('#edit-form').submit(function(e) {
         }
     });
 });
+
+
+document.getElementById('allow-edit').addEventListener('click', function() {
+    // Get all input elements and the submit button
+    var inputs = document.querySelectorAll('#edit-form input');
+    var submitButton = document.getElementById('save-changes');
+  
+    // Check the current state (enabled or disabled) of the first input field
+    var isDisabled = inputs[0].disabled;
+  
+    // Toggle the disabled state for all inputs and the submit button
+    inputs.forEach(function(input) {
+      input.disabled = !isDisabled;
+    });
+    submitButton.disabled = !isDisabled;
+  });
+  

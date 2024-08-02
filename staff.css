@@ -67,7 +67,6 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
-    
 }
 
 .add-modal-content{
@@ -78,9 +77,33 @@
     width: 80%;
     max-width: 600px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
     
 }
 
+#addForm{
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    justify-content: left;
+    height: 300px;
+    margin-top: 20px;
+
+    
+}
+
+#addForm input{
+    height: 20px;
+    margin-right: 10px;
+
+}
+
+
+#addForm label{
+    width: 110px;
+    font-size: 15px;
+}
 
 .edit-modal{
     display: none;
@@ -92,4 +115,39 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.edit-modal-content{
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+
+}
+
+
+#edit-form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    justify-content: left;
+    height: 300px;
+    margin-top: 20px;
+
+    
+}
+
+#edit-form input{
+    height: 20px;
+    margin-right: 10px;
+
+}
+
+
+#edit-form label{
+    width: 110px;
+    font-size: 15px;
 }
