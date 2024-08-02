@@ -1,43 +1,49 @@
 .staff-table{
 
     text-align: left;
-    width: 80%;
+    width: 950px;
 
    border-collapse: collapse;
-    padding: 40px;    
-    background-color: aliceblue;
+  
+    background-color: #FFFFFF;
     border-radius: 5px;
+
 }
 
 
 .staff-table th{
     background-color: #3E4BBA;
     padding: 10px;
-    /* color: aliceblue; */
+    color: #FFFFFF;
+    position: sticky;
+    top: 0px;
 }
 
 
 
 .staff-table td{
     padding: 10px;
+    
 }
+
+
 
 
 
 .table-container{
-    padding: 10px;
-    
-    /* background-color: red; */
-    /* display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    width: fit-content;
-    padding: 10px;
-    height: 400px;
-    max-height: 500px;
-    overflow-y: auto; */
-
+  
+    width: 950px;
+    max-height: 400px; /* Set the desired height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: none; 
+    border-radius: 10px;
+    max-height: 350px;
+    position: relative;
+    left: 50px;
+    top: 40px;
 }
+
+
 
 .main-top-staff{
     

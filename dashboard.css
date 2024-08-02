@@ -19,14 +19,14 @@
 }
 
 .top{
-    color:aliceblue;
+    color:#FFFFFF;
     background-color: #3E4BBA;
     width: 100%;
     height:  10vh;
 }
 
 .side{
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     width: 200px;
     
 }
@@ -34,7 +34,7 @@
 
 
 .main{
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     width: 200px;
     height:  90vh;
     flex-grow: 1;
@@ -82,7 +82,7 @@
 
 .location{
     padding-left: 10px;
-    border-left: 1px solid aliceblue;
+    border-left: 1px solid #FFFFFF;
     font-weight: 400;
 
     
@@ -102,7 +102,7 @@
 
 .staff-profile-container{
 
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     width: fit-content;
     display: flex;
     padding: 20px;
@@ -120,7 +120,7 @@
 }
 
 .staff-profile-container .right{
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     width: fit-content;
     display: flex;
     flex-direction: column;
@@ -143,7 +143,7 @@
 .staff-profile-container .left .logout{
     text-decoration: none;
     background-color: red;
-    color: aliceblue;
+    color: #FFFFFF;
     padding: 5px;
     border-radius: 5px;
     height: fit-content;
@@ -167,7 +167,7 @@
 }
 
 .side-bar .link{
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     flex-grow: 1;
     text-align: start;
     padding-top: 10px;
@@ -197,7 +197,7 @@
 /*main-bar*/
 
 .main-container{
-    background-color:  rgb(195, 195, 195);
+    background-color:  #EDEDED;
     width: 98%;
     height: 80vh;
     margin-top: 30px;
@@ -221,7 +221,7 @@
 
 .main-top .general-report-label{
     padding: 10px;
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     border-radius: 10px;
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
@@ -237,7 +237,7 @@
     padding: 5px;
     border-radius: 5px;
     background-color: #3E4BBA;
-    color: aliceblue;
+    color: #FFFFFF;
     margin: 5px;
     height: 20px;
     font-size: 12px;
@@ -249,7 +249,7 @@
 
 .main-top .monitoring-label{
     padding: 10px;
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     margin-right: 55px;
     border-radius: 10px;
     padding-right: 30px;
@@ -261,7 +261,7 @@
 .main-top .today{
     border: 0px;
     background-color: #3E4BBA;
-    color: aliceblue;
+    color: #FFFFFF;
     margin: 5px;
     height: 30px;
     width: 50px;
@@ -273,7 +273,7 @@
 
 .main-top .disease-label{
     padding: 10px;
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     border-radius: 10px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -295,7 +295,7 @@
 
 
 .general-report-container{
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     height: 65vh;
     width: 40%;
     margin-left: 50px;
@@ -311,7 +311,7 @@
 
 .general-report{
 
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     display: flex;
     height: 60vh;
     width: 100%;
@@ -325,7 +325,7 @@
 } 
 
 .general-report .left{
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     width: 50%;
     padding: 10px;
     height: 300px;
@@ -334,14 +334,14 @@
 }
 
 .general-report .left .statistic-list{
-    background-color: aliceblue;
+    background-color: #FFFFFF;
   
     width: 80%;
     padding: 10px;
 }
 
 .general-report .left .statistic-list .stats{
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     width: 170px;
     display: flex;
     font-size: 11px; 
@@ -358,7 +358,7 @@
 .general-report .left .statistic-list .generate-report{
     background-color: #3E4BBA;
     border: none;
-    color:aliceblue;
+    color:#FFFFFF;
     width: 50px;
     height: 30px;
     border-radius: 5px;
@@ -388,7 +388,7 @@
 }
 
 .general-report .right{
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     width: 50%;
     padding-left: 10px;
 }
@@ -442,7 +442,7 @@ left:36px;
 
 
 .monitoring-container{
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     height: 65vh;
     width: 25%;
     position: relative;
@@ -452,7 +452,7 @@ left:36px;
 }
 
 .disease-container{
-    background-color: aliceblue;
+    background-color: #FFFFFF;
     height: 65vh;
     border-radius: 20px;
     width: 25%;
