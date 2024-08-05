@@ -2,10 +2,10 @@ $(document).ready(function() {
 
     loadTable();
     
-    // var savedFilter = localStorage.getItem('nameInput');
-    // if (savedFilter) {
-    //     $('#filtername').val(savedFilter);
-    //     performFilter(savedFilter);}
+    var savedFilter = localStorage.getItem('nameInput');
+    if (savedFilter) {
+        $('#filtername').val(savedFilter);
+        performFilter(savedFilter);}
    
     // document.getElementById('filtername').value = 'Shadow';
 });
@@ -21,15 +21,13 @@ function loadTable() {
             var templateRow = $('#template-row').clone().removeAttr('id').removeAttr('style');
             console.log(data);
             tableBody.empty();
-
             $.each(data, function(index, row) {
                 var newRow = templateRow.clone();
                 newRow.find('.id').text(row.staff_id);
-                newRow.find('.name').text(row.first_name + " " + row.last_name);
+                newRow.find('.name').text(row.first_name + " " + row.last_name);  
                 newRow.find('.position').text(row.position);
                 newRow.find('.contact_number').text(row.contact_number);
-
-                newRow.find('.actions').html('<button class="delete-btn" data-id="' + row.staff_id + '">Delete</button><button class="edit-btn" data-id="' + row.staff_id + '">Edit</button>');
+                newRow.find('.actions').html('<button class="delete-btn" data-id="' + row.staff_id + '"> Delete </button> <button class="edit-btn" data-id="' + row.staff_id + '">View</button>');
                 tableBody.append(newRow);
             });
         },
@@ -222,4 +220,79 @@ document.getElementById('allow-edit').addEventListener('click', function() {
     });
     submitButton.disabled = !isDisabled;
   });
+
+
+//filter
+
   
+$(document).ready(function() {
+    // Load the filter value from localStorage when the page loads
+    var savedFilter = localStorage.getItem('nameInput');
+
+    if (savedFilter) {
+        $('#filtername').val(savedFilter);
+        performFilter(savedFilter); // Perform filter if saved value exists
+    }
+
+    $("#filter-btn").on('click', function() {
+        var nameInput = $('#filtername').val().trim(); // Get the trimmed input value
+        localStorage.setItem('nameInput', nameInput);
+
+        // Console logs for debugging
+        console.log("Name input:", nameInput);
+
+        // If nameInput is empty, reload the page
+        if (nameInput === "") {
+            console.log("Table empty, reloading page");
+            setTimeout(function() {
+                location.reload();
+            }, 5000); // Reload after 5 seconds
+            return;
+        }
+        // Perform AJAX request with the filter data
+        // performFilter(nameInput);
+    });
+});
+
+function performFilter(nameInput) {
+    $.ajax({
+        url: 'staff_filter.php',
+        method: 'POST',
+        data: { name: nameInput }, // Send data as key-value pairs
+        dataType: 'json',
+        success: function(data) {
+            console.log("AJAX success, data received:", data); // Debug statement
+            var tableBody = $('.table-container #staff-table tbody');
+            tableBody.empty();
+
+            // Check if data is an array and has content
+            if (Array.isArray(data)) {
+                $.each(data, function(index, row) {
+                    console.log("Processing row:", row); // Debug each row
+                    var newRow = $('<tr class="table_tr"></tr>');
+                    newRow.append('<td>' + row.staff_id + '</td>');
+                    newRow.append('<td>' + row.first_name + '</td>');
+                    newRow.append('<td>' + row.position + '</td>');
+                    newRow.append('<td>' + row.contact_number + '</td>');
+                    newRow.append('<td><button class="delete-btn" data-id="' + row.staff_id + '">Delete</button><button class="edit-btn" data-id="' + row.staff_id + '">Edit</button></td>');
+                    tableBody.append(newRow);
+                    // document.getElementById('filtername').value = '';  
+                });
+            } else {
+                console.error('Unexpected data format or empty data:', data);
+                // tableBody.append('<tr><td colspan="5">No results found</td></tr>');
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.error('Error loading data: ' + textStatus, errorThrown);
+        }
+    });
+}
+
+$('#clear').click(function(){
+    localStorage.setItem('nameInput','');
+    document.getElementById('filtername').value = "";
+    location.reload().
+    console.log('hello');
+}
+) 

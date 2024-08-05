@@ -1,10 +1,18 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{  
+    font-family: poppins;
     color: #fefefe;
     padding: 0%;
     margin: 0px;
 
 }
 body{
+    overflow-y: hidden;
+    background-color: #3E4BBA;
+
+    overflow-x: hidden;
     
 }
 
@@ -13,7 +21,7 @@ body{
     width: 100%;
     height: 100vh;
     margin: 1px;
-
+    overflow-y: hidden;
 }   
 
 .titles{
@@ -21,25 +29,67 @@ body{
     z-index: 5;
     left: 100px;
     width: 300px;
-    top: 50px;
+    top: 10px;
+    
+}
 
+.HC-Assist{
+    font-size: 50px;
+    font-style: italic;
+    margin-bottom: -20px;
+    font-weight: light;
+}
+
+.subtitle{
+    width: 400px;
+    font-size: 18px;
+    font-weight: 200;
 }
 
 .loginForm{
     background-color: #3E4BBA;
-    display: flex;
-    width: 200px;
+    /* display: flex;
+    justify-content: flex-start; */
+    width: 400px;
     padding: 20px;
     position: relative;
     z-index: 4;    
-    left: 100px;
+    left: 80px;
+    top: 80px;
+    padding: 10px;
+}
 
-    top: 100px;
+.loginForm *{
+    margin: 10px;
+}
+
+.loginForm input{
+color: black;
+height: 30px;
+width: 350px;
+border-radius: 5px;
+border: none;
 }
 
 button{
-    
+    font-weight: 600;
     color:  #3E4BBA;;
+}
+
+
+
+button:hover{
+    font-weight: 600;
+    background-color: #aeaeae;
+    cursor: pointer;
+    color:  #212fa9;
+}
+
+button:active{
+    font-weight: 600;
+    background-color: #575757;
+    cursor: pointer;
+    color:  #7f87cf;
 }
 
 .image-container img{
@@ -52,6 +102,8 @@ button{
 .left-slantbox{
     position: absolute;
 background-color: #3E4BBA;
+/* background-color:  #14162f; */
+
 height: 80vh;
 width: 80%;
 bottom: 30px;
@@ -59,11 +111,14 @@ right: 490px;
 transform: rotate(75deg);
 z-index: 3;
 
+
 }
 
 .right-slantbox{
     position: absolute;
     background-color:  #3E4BBA;
+    /* background-color:  #14162f; */
+
     height: 80vh;
     width: 80%;
     bottom: 30px;
@@ -72,4 +127,36 @@ z-index: 3;
     z-index: 2;
  
 
+}
+
+.design{
+    position: absolute;
+    width: 100%; /* Or a specific width like 100vw or a fixed value */
+    height: 100vh; /* Or a specific height */
+    overflow: hidden; /* Prevents content from overflowing */
+    box-sizing: border-box; 
+    bottom: 0px;
+    margin: 0px;
+    left: 150px;
+}
+
+.login-btn{
+    padding:10px;
+    width: 150px;
+    height: 40px;
+    font-size: medium;
+    border-radius: 5px;
+    border: none;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.triangle {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position:absolute;
+    z-index: 6;
+    
 }
