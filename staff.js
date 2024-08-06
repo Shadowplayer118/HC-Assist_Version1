@@ -271,7 +271,7 @@ function performFilter(nameInput) {
                     console.log("Processing row:", row); // Debug each row
                     var newRow = $('<tr class="table_tr"></tr>');
                     newRow.append('<td>' + row.staff_id + '</td>');
-                    newRow.append('<td>' + row.first_name + '</td>');
+                    newRow.append('<td>' + row.first_name + " " + row.last_name + '</td>');
                     newRow.append('<td>' + row.position + '</td>');
                     newRow.append('<td>' + row.contact_number + '</td>');
                     newRow.append('<td><button class="delete-btn" data-id="' + row.staff_id + '">Delete</button><button class="edit-btn" data-id="' + row.staff_id + '">Edit</button></td>');
