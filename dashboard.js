@@ -12,3 +12,11 @@ $(window).click(function(event) {
         $('.staff-profile').hide();
     }
 });
+
+
+
+
+function gotoReferral(){
+
+    window.location.href = "http://localhost/HC-Assist_Version1/referral.html";
+}
