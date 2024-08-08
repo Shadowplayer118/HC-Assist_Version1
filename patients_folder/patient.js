@@ -115,3 +115,68 @@ $('#patient-table').on('click', '.delete-btn', function() {
     });
 });
 
+
+
+
+//edit modal
+$(document).on('click', '.edit-btn', function() {
+    var id = $(this).data('id');
+    
+    $.ajax({
+        url: 'patient_fetch.php',
+        type: 'GET',
+        data: { id: id },
+        success: function(response) {
+            try {
+                var patient = JSON.parse(response);
+                $('#edit-patient_id').val(patient.patient_id);
+                $('#edit-first_name').val(patient.first_name);
+                $('#edit-middle_name').val(patient.middle_name);
+                $('#edit-last_name').val(patient.last_name);
+                $('#edit-gender').val(patient.gender);
+                var birthdate = patient.birth_date.split(' ')[0];
+                $('#edit-birthdate').val(birthdate);
+                $('#edit-purok').val(patient.purok);
+                $('#edit-household').val(patient.household);
+                $('#edit-civil_status').val(patient.civil_status);
+                $('#edit-age').val(patient.age);
+                $('#edit-contact_number').val(patient.contact_number);
+                $('#edit-blood_type').val(patient.blood_type);
+                
+                // Show the modal, use the appropriate method depending on your modal implementation
+                $('#edit-modal').show();
+
+                // $('#edit-modal').show();
+
+                console.log("Boyaka");
+            } catch (e) {
+                alert('Error parsing staffs details.');
+                console.log(response);
+                console.log(id);
+
+            }
+        },
+        error: function() {
+            alert('php is to blame');
+        }
+    });
+});
+
+
+
+// Close modal
+$('.close-edit').click(function() {
+    $('#edit-modal').hide();
+});
+
+// Close modal when clicking outside
+$(window).click(function(event) {
+    if ($(event.target).is('#edit-modal')) {
+        $('#edit-modal').hide();
+    }
+});
+
+
+
+
+

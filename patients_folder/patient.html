@@ -180,7 +180,7 @@
 
 <!---------MODALS-------------------------------------------------------------------------------------------------------------->        
 
-<div class="add-modal" id="add-modal" style="display: inline-block;">
+<div class="add-modal" id="add-modal">
 
     <div class="add-modal-content">
         <span class="close">&times;</span>
@@ -228,6 +228,59 @@
     </div>
 
 </div>
+
+
+
+<div id="edit-modal" class = "edit-modal" data-id="">
+                
+    <div class="edit-modal-content">
+    <span class="close-edit" id = "close-edit">&times;</span>
+    <h3>Edit Form</h3>
+        <form action="" id="edit-form">
+            <input type="text" id="edit-patient_id" name="patient_id" style="display:none"><br>
+
+            <label for="Name">First Name:</label>
+            <input type="text" id="edit-first_name" name="first_name" required disabled="true"><br>
+
+            <label for="Name">Middle Name:</label>
+            <input type="text" id="edit-middle_name" name="middle_name" required disabled="true"><br>
+
+            <label for="Name">Last Name:</label>
+            <input type="text" id="edit-last_name" name="last_name" required disabled="true"><br>
+
+            <label for="title">Gender:</label>
+            <input type="text" id="edit-gender" name="gender" disabled="true"><br>
+
+            <label for="title">Birth Date:</label>
+            <input type="date" id="edit-birthdate" name="birthdate" disabled="true"><br>
+
+            <label for="title">Purok:</label>
+            <input type="text" id="edit-purok" name="purok" disabled="true"><br>
+
+            <label for="title">Household:</label>
+            <input type="text" id="edit-household" name="household" disabled="true"><br>
+
+            <label for="title">Civil Status:</label>
+            <input type="text" id="edit-civil_status" name="civil_status" disabled="true"><br>
+
+            <label for="title">Age</label>
+            <input type="text" id="edit-age" name="age" disabled="true"><br>
+
+            <label for="title">Contact #:</label>
+            <input type="text" id="edit-contact_number" name="contact_number" disabled="true"><br>
+
+            <label for="title">Blood Type:</label>
+            <input type="text" id="edit-blood_type" name="blood_type" disabled="true"><br>
+
+            
+
+            <button type = "submit" id="save-changes" disabled="true">Save Changes</button>
+        </form>
+        <button id = "allow-edit">Edit</button>
+
+    </div>
+</div>
+
 
 
     
