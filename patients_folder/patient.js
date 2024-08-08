@@ -178,5 +178,65 @@ $(window).click(function(event) {
 
 
 
+//Allow Edit
+document.getElementById('allow-edit').addEventListener('click', function() {
+    // Get all input elements and the submit button
+    var inputs = document.querySelectorAll('#edit-form input');
+    var submitButton = document.getElementById('save-changes');
+  
+    // Check the current state (enabled or disabled) of the first input field
+    var isDisabled = inputs[0].disabled;
+  
+    // Toggle the disabled state for all inputs and the submit button
+    inputs.forEach(function(input) {
+      input.disabled = !isDisabled;
+    });
+    submitButton.disabled = !isDisabled;
+  });
+
+
+  // Edit character
+$('#edit-form').submit(function(e) {
+    e.preventDefault();
+
+    var patient_id = $('#edit-patient_id').val();
+    var first_name = $('#edit-first_name').val();
+    var middle_name = $('#edit-middle_name').val();
+    var last_name = $('#edit-last_name').val();
+    var birth_date = $('#edit-birth_date').val();
+    var gender = $('#edit-gender').val();
+    var purok = $('#edit-purok').val();
+    var household = $('#edit-household').val();
+    var civil_status = $('#edit-civil_status').val();
+    var age = $('#edit-age').val();
+    var contact_number = $('#edit-contact_number').val();
+
+
+    var blood_type = $('#edit-blood_type').val();
+
+    $.ajax({
+        url: 'patient_edit.php',
+        type: 'POST',
+        data: { patient_id: patient_id, first_name: first_name, middle_name: middle_name,
+             last_name:last_name, gender:gender,purok:purok, household:household, age:age,
+              contact_number:contact_number,signature:signature,birth_date:birth_date, civil_status:civil_status,
+               blood_type:blood_type
+         },
+        success: function(response) {
+            alert('Character updated successfully!');
+            $('#edit-modal').hide();
+            // loadTable(); 
+            location.reload();
+        },
+        error: function() {
+            console.log(response);
+            alert('Error updating character.');
+        }
+    });
+});
+
+
+
+
 
 
