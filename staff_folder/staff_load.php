@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include '../connection.php';
 
 $sqlQuery = "Select * from staff ORDER BY staff_id DESC";
 $result = mysqli_query($conn,$sqlQuery);

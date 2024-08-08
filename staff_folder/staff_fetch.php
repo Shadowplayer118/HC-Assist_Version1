@@ -1,6 +1,6 @@
 <?php
 
-include 'connection.php';
+include '../connection.php';
 
 // Check if the 'id' parameter is set in the GET request
 if (!isset($_GET['id'])) {

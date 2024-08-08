@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include '../connection.php';
 
 if (!isset($_POST['staff_id'])) {
     echo json_encode(['error' => 'Form data missing']);

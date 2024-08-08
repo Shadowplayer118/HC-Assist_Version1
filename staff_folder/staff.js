@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 function loadTable() {
     $.ajax({
-        url: 'load_staff.php',
+        url: 'staff_load.php',
         method: 'GET',
         dataType: 'json',
         success: function(data) {
@@ -36,7 +36,6 @@ function loadTable() {
         }
     });
 }
-
 
 
 // Open modal
@@ -95,7 +94,7 @@ $('#staff-table').on('click', '.delete-btn', function() {
     var id = $(this).data('id');
 
     $.ajax({
-        url: 'delete_staff.php',
+        url: 'staff_delete.php',
         method: 'POST',
         data: { id: id },
         dataType: 'json',
@@ -118,7 +117,7 @@ $(document).on('click', '.edit-btn', function() {
     var id = $(this).data('id');
     
     $.ajax({
-        url: 'fetch_staff.php',
+        url: 'staff_fetch.php',
         type: 'GET',
         data: { id: id },
         success: function(response) {

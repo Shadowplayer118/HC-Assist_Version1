@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include '../connection.php';
 
 $name = isset($_POST['name']) ? $_POST['name'] : '';
 
