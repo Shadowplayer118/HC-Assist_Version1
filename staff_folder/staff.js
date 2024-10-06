@@ -27,7 +27,7 @@ function loadTable() {
                 newRow.find('.name').text(row.first_name + " " + row.last_name);  
                 newRow.find('.position').text(row.position);
                 newRow.find('.contact_number').text(row.contact_number);
-                newRow.find('.actions').html('<button class="delete-btn" data-id="' + row.staff_id + '"> Delete </button> <button class="edit-btn" data-id="' + row.staff_id + '">View</button>');
+                newRow.find('.actions').html('<button class="edit-btn" data-id="' + row.staff_id + '"><img src="../assets/mdi_eye.png" alt=""></button> <button class="delete-btn" data-id="' + row.staff_id + '">  <img src="../assets/Vector-1.png" alt=""> </button>');
                 tableBody.append(newRow);
             });
         },
@@ -273,7 +273,7 @@ function performFilter(nameInput) {
                     newRow.append('<td>' + row.first_name + " " + row.last_name + '</td>');
                     newRow.append('<td>' + row.position + '</td>');
                     newRow.append('<td>' + row.contact_number + '</td>');
-                    newRow.append('<td><button class="delete-btn" data-id="' + row.staff_id + '">Delete</button><button class="edit-btn" data-id="' + row.staff_id + '">Edit</button></td>');
+                    newRow.append('<button class="edit-btn" data-id="' + row.staff_id + '"><img src="../assets/mdi_eye.png" alt=""></button> <button class="delete-btn" data-id="' + row.staff_id + '">  <img src="../assets/Vector-1.png" alt=""> </button>');
                     tableBody.append(newRow);
                     // document.getElementById('filtername').value = '';  
                 });
@@ -281,12 +281,59 @@ function performFilter(nameInput) {
                 console.error('Unexpected data format or empty data:', data);
                 // tableBody.append('<tr><td colspan="5">No results found</td></tr>');
             }
+
+            $('#filtername').val('');
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.error('Error loading data: ' + textStatus, errorThrown);
         }
     });
 }
+
+//role select
+
+$(document).ready(function(){
+    $('#roleSelect').on('change',function(){
+        var  filterValue = $(this).val();
+
+        $.ajax({
+            url: 'staff_role.php',
+            type:'POST',
+            data:{filter: filterValue},
+            success: function(data){
+                console.log("AJAX success, data received:", data); // Debug statement
+                var tableBody = $('.table-container #staff-table tbody');
+                tableBody.empty();
+    
+                // Check if data is an array and has content
+                if (Array.isArray(data)) {
+                    $.each(data, function(index, row) {
+                        console.log("Processing row:", row); // Debug each row
+                        var newRow = $('<tr class="table_tr"></tr>');
+                        newRow.append('<td>' + row.staff_id + '</td>');
+                        newRow.append('<td>' + row.first_name + " " + row.last_name + '</td>');
+                        newRow.append('<td>' + row.position + '</td>');
+                        newRow.append('<td>' + row.contact_number + '</td>');
+                        newRow.append('<button class="edit-btn" data-id="' + row.staff_id + '"><img src="../assets/mdi_eye.png" alt=""></button> <button class="delete-btn" data-id="' + row.staff_id + '">  <img src="../assets/Vector-1.png" alt=""> </button>');
+                        tableBody.append(newRow);
+                       
+                        // document.getElementById('filtername').value = '';  
+                    });
+                } else {
+                    console.error('Unexpected data format or empty data:', data);
+                    // tableBody.append('<tr><td colspan="5">No results found</td></tr>');
+                }
+              
+
+            },
+            error: function(){
+                alert('Error Filtering data');
+            }
+        })
+    })
+}
+
+);
 
 $('#clear').click(function(){
     localStorage.setItem('nameInput','');

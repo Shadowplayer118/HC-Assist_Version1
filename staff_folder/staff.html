@@ -26,12 +26,7 @@
          
         </div>
 
-
-
         <div class="staff-profile" id="staff-profile">
-
-
-        
 
             <div class="staff-profile-container">
             <span class="close" style="position:relative; bottom:20px; right: 15px;">&times;</span>
@@ -67,62 +62,61 @@
 
 <!---------SIDE-------------------------------------------------------------------------------------------------------------->        
 
-        <div class="side">
+<div class="side">
 
-            <div class="side-bar">
-                <div class="link">
-                    <img src="" alt="">
-                    <a href="../dashboard.html">Dashboard</a>
-                </div>
-
-                <div class="link">
-                    <img src="" alt="">
-                    <a href="../patients_folder/patient.html">Patients</a>
-                </div>
-
-                <div onclick="gotoReferral()" class="link">
-                    <img src="" alt="">
-                    <a href="../referral.html">Referrals</a>
-                </div>
-
-                <div class="link">
-                    <img src="" alt="">
-                    <a href="../calendar.html">Calendar</a>
-                </div>
-
-                <div class="link">
-                    <img src="" alt="">
-                    <a href="../pregnant.html">Pregnant</a>
-                </div>
-
-                <div class="link">
-                    <img src="" alt="">
-                    <a href="../child_nutrition.html">Child Nutrition</a>
-                </div>
-
-                <div class="link">
-                    <img src="../disease.html" alt="">
-                    <a href="">Disease</a>
-                </div>
-
-                <div class="link">
-                    <img src="" alt="">
-                    <a href="../workflow.html">Workflow</a>
-                </div>
-
-                <div class="link">
-                    <img src="" alt="">
-                    <a href="../medicine.html">Medicine</a>
-                </div>
-
-                <div class="link">
-                    <img src="" alt="">
-                    <a href="staff.html">Staff</a>
-                </div>
-            </div>
-
+    <div class="side-bar">
+        <div class="link">
+            <img src="" alt="">
+            <a href="../dashboard_folder/dashboard.html">Dashboard</a>
         </div>
-        
+
+        <div class="link">
+            <img src="" alt="">
+            <a href="../patients_folder/patient.html">Patients</a>
+        </div>
+
+        <div class="link">
+            <img src="" alt="">
+            <a href="../referral_folder/referral.html">Referrals</a>
+        </div>
+
+        <div class="link">
+            <img src="" alt="">
+            <a href="../calendar_folder/calendar.html">Calendar</a>
+        </div>
+
+        <div class="link">
+            <img src="" alt="">
+            <a href="../pregnant_folder/pregnant.html">Pregnant</a>
+        </div>
+
+        <div class="link">
+            <img src="" alt="">
+            <a href="../child_nutrition_folder/child_nutrition.html">Child Nutrition</a>
+        </div>
+
+        <div class="link">
+            <img src="" alt="">
+            <a href="../disease_folder/disease.html">Disease</a>
+        </div>
+
+        <div class="link">
+            <img src="" alt="">
+            <a href="../workflow_folder/workflow.html">Workflow</a>
+        </div>
+
+        <div class="link">
+            <img src="" alt="">
+            <a href="../medicine_folder/medicine.html">Medicine</a>
+        </div>
+
+        <div class="link">
+            <img src="" alt="">
+            <a href="../staff_folder/staff.html">Staff</a>
+        </div>
+    </div>
+
+</div>
 <!---------MAIN-------------------------------------------------------------------------------------------------------------->        
         <div class="main">
 
@@ -130,12 +124,22 @@
             <div class="main-container">
 
             <div class="main-top-staff">
-                <button class="openModalBtn" id="openModalBtn">Add Character</button>
-                <form action="" id="filterForm">
+                <button class="openModalBtn" id="openModalBtn"><img src="../assets/medical-icon_i-care-staff-area.png" alt=""> <img src="../assets/+.png" alt="" class="plus"></button>
 
-                    <button type = "submit" id="filter-btn" class="filter-btn">Filter</button>
+                <select name="" id="roleSelect" class="roleSelect">
+                    <option value="All Roles">All Roles</option>
+                    <option value="BHW">BHW</option>
+                    <option value="Midwife">Midwife</option>
+                    <option value="Assigned Nurse">Assigned Nurse</option>
+                    <option value="Admin">Admin</option>
+                </select>
 
-                    <input type="text" id="filtername" name="name" value = "">
+                <form action="" id="filterForm" class="filterForm">
+
+
+                    <button type = "submit" id="filter-btn" class="filter-btn"><img src="../assets/search.png" alt=""></button>
+
+                    <input type="text" id="filtername" class="filtername" name="name" value = "">
 
                 </form>
             </div>    
@@ -197,13 +201,23 @@
                         <input type="text" id="last_name" name="last_name" required><br>
         
                         <label for="title">Gender:</label>
-                        <input type="text" id="gender" name="gender"><br>
+                        <select name="gender" id="gender">
+                            <option value="Admin">Male</option>
+                            <option value="Staff">Female</option>
+                        </select>
         
                         <label for="title">Purok:</label>
                         <input type="text" id="purok_assigned" name="purok_assigned"><br>
         
+                        <!-- <label for="title">Position:</label>
+                        <input type="text" id="position" name="position"><br> -->
+
                         <label for="title">Position:</label>
-                        <input type="text" id="position" name="position"><br>
+                        <select name="position" id="position">
+                            <option value="Admin">Admin</option>
+                            <option value="Staff">Staff</option>
+                            <option value="Midwife">Midwife</option>
+                        </select>
         
                         <label for="title">Civil Status:</label>
                         <input type="text" id="civil_status" name="civil_status"><br>
@@ -233,43 +247,53 @@
             <form action="" id="edit-form">
                 <input type="text" id="edit-staff_id" name="staff_id" style="display:none"><br>
 
-                <label for="Name">First Name:</label>
-                <input type="text" id="edit-first_name" name="first_name" required disabled="true"><br>
+                <div class="input-container">
+                    <label for="Name">First Name:</label>
+                    <input type="text" id="edit-first_name" name="first_name" required disabled="true">
+                </div>
 
-                <label for="Name">Middle Name:</label>
-                <input type="text" id="edit-middle_name" name="middle_name" required disabled="true"><br>
+                <div class="input-container">
+                    <label for="Name">Middle Name:</label>
+                    <input type="text" id="edit-middle_name" name="middle_name" required disabled="true">
+                </div>
 
-                <label for="Name">Last Name:</label>
+               <div class="input-container">
+                <label for="Name">Last Name:</label><br>
                 <input type="text" id="edit-last_name" name="last_name" required disabled="true"><br>
-
-                <!-- <label for="title">Title:</label>
-                <input type="text" id="edit-birthdate" name="title"><br>
-                 -->
-                <label for="title">Gender:</label>
+               </div>
+               <div class="input-container">
+                <label for="title">Age</label> <br>
+                <input type="text" id="edit-age" name="age" disabled="true"><br>
+               </div>
+               <div class="input-container">
+                <label for="title">Birthdate:</label> <br>
+                <input type="text" id="edit-birthdate" name="title" disabled="true">
+               </div>
+               <div class="input-container">
+                <label for="title">Gender:</label><br>
                 <input type="text" id="edit-gender" name="gender" disabled="true"><br>
+               </div>
 
-                <label for="title">Purok Assigned:</label>
-                <input type="text" id="edit-purok_assigned" name="purok-assigned" disabled="true"><br>
-
-                <label for="title">Position:</label>
-                <input type="text" id="edit-position" name="position" disabled="true"><br>
-
-                <label for="title">Civil Status:</label>
+               <div class="input-container">
+                <label for="title">Civil Status:</label><br>
                 <input type="text" id="edit-civil_status" name="civil_status" disabled="true"><br>
 
-                <label for="title">Image:</label>
-                <input type="text" id="edit-image" name="image" disabled="true"><br>
-
-                <label for="title">Age</label>
-                <input type="text" id="edit-age" name="age" disabled="true"><br>
-
-                <label for="title">Contact #:</label>
-                <input type="text" id="edit-contact_number" name="contact_number" disabled="true"><br>
-
-                <label for="title">Signature:</label>
-                <input type="text" id="edit-signature" name="signature" disabled="true"><br>
-
+               </div>
+               <div class="input-container">
+                <label for="title">Purok Assigned:</label><br>
+                <input type="text" id="edit-purok_assigned" name="purok-assigned" disabled="true"><br>
+               </div>
+               <div class="input-container">
+                <label for="title">Position:</label><br>
+                <input type="text" id="edit-position" name="position" disabled="true"><br>
+               </div>
+              
+               <div class="input-container">
                 
+                <label for="title">Contact #:</label><br>
+                <input type="text" id="edit-contact_number" name="contact_number" disabled="true"><br>
+               </div>
+               <div class="input-container"></div>
 
                 <button type = "submit" id="save-changes" disabled="true">Save Changes</button>
             </form>
@@ -278,9 +302,7 @@
         </div>
     </div>
 
-
-
-
+    <script src = "../jquery.js"></script>
 
 <script src = "../dashboard.js"></script>
 <script src = "staff.js"></script>

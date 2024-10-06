@@ -5,7 +5,6 @@ if (!isset($_POST['patient_id'])) {
     echo json_encode(['error' => 'Form data missing']);
     exit;
 }
-
 $patient_id = intval($_POST['patient_id']);
 $first_name = htmlspecialchars(trim($_POST['first_name']));
 $middle_name = htmlspecialchars(trim($_POST['middle_name']));
@@ -15,11 +14,11 @@ $purok = htmlspecialchars(trim($_POST['purok']));
 $household = htmlspecialchars(trim($_POST['household']));
 $civil_status = htmlspecialchars(trim($_POST['civil_status']));
 $age = intval($_POST['age']);
-$contact_number = htmlspecialchars(trim($_POST['contact_number']));
-$signature = htmlspecialchars(trim($_POST['signature']));
-$username = $first_name . " " . $last_name;
+$contact = htmlspecialchars(trim($_POST['contact_number']));
+$blood_type = htmlspecialchars(trim($_POST['blood_type']));
 
-$sql = "UPDATE staff SET first_name = ?, middle_name = ?, last_name = ?, gender = ?, purok_assigned = ?, position = ?, image = ?, age = ?, contact_number = ?, signature = ?, username = ? WHERE staff_id = ?";
+
+$sql = "UPDATE patient SET first_name = ?, middle_name = ?, last_name = ?, gender = ?, purok= ?, household = ?, civil_status = ?, age = ?, contact_number = ? , blood_type = ? WHERE patient_id = ?";
 $stmt = $conn->prepare($sql);
 
 if ($stmt === false) {
@@ -27,7 +26,7 @@ if ($stmt === false) {
     exit;
 }
 
-$stmt->bind_param("sssssssisssi", $first_name, $middle_name, $last_name, $gender, $purok_assigned, $position, $image, $age, $contact_number, $signature, $username, $staff_id);
+$stmt->bind_param("sssssssissi", $first_name, $middle_name, $last_name, $gender, $purok, $household, $civil_status, $age, $contact, $blood_type,$patient_id);
 
 if ($stmt->execute()) {
     echo json_encode(['status' => 'success', 'message' => 'Character updated successfully']);
