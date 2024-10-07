@@ -20,7 +20,7 @@
         <div class="top">
             <div class="top-content">
                 <h1 class="title">HC-Assist</h1>
-                <h1 class="location">Application > Patient</h1> <!---Note, this will usually be an anchor tag-->
+                <h1 class="location">Application > Referral > Patient Select</h1> <!---Note, this will usually be an anchor tag-->
                 <div class="profile"><img src="../assets/profile.jpg" alt=""></div>
             </div>
          
@@ -128,7 +128,7 @@
             <div class="main-container">
 
             <div class="main-top-staff">
-                <button class="openModalBtn" id="openModalBtn"><img src="../assets/medical-icon_i-care-staff-area.png" alt=""> <img src="../assets/+.png" alt="" class="plus"></button>
+                <button class="openModalBtn" id="openModalBtn"  onclick="window.location.href='immunization.html';">Cancel</button>
 
                 <select name="" id="roleSelect" class="roleSelect">
                     <option value="Purok">Purok</option>
@@ -239,12 +239,12 @@
                 
         <div class="edit-modal-content">
         <span class="close-edit" id = "close-edit">&times;</span>
-        <h3>Edit Form</h3>
+        <h3>Create Pregnancy Record for:</h3>
             <form action="" id="edit-form">
                 <input type="text" id="edit-patient_id" name="edit-patient_id" style="display:none"><br>
 
                 <div class="input-container">
-                    <label for="Name">First Name:</label>
+                    <label for="Name">Patient:</label>
                     <input type="text" id="edit-first_name" name="edit-first_name" required disabled="true">
                 </div>
 
@@ -298,9 +298,9 @@
              
                <div class="input-container"></div>
 
-                <button type = "submit" id="save-changes" disabled="true">Save Changes</button>
+                <button type = "submit" id="save-changes" >Save Changes</button>
             </form>
-            <button id = "allow-edit">Edit</button>
+            
 
         </div>
     </div>
@@ -309,7 +309,7 @@
 
 <script src = "../dashboard.js"></script>
 
-<script src = "patient.js"></script>
+<script src = "patient_select.js"></script>
 
 
 </body>

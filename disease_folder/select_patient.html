@@ -102,6 +102,11 @@
 
         <div class="link">
             <img src="" alt="">
+            <a href="../immunization_folder/immunization.html">Immunization</a>
+        </div>
+
+        <div class="link">
+            <img src="" alt="">
             <a href="../workflow_folder/workflow.html">Workflow</a>
         </div>
 
@@ -235,61 +240,33 @@
         <div class="edit-modal-content">
         <span class="close-edit" id = "close-edit">&times;</span>
         <h3>Create Contagious Disease Record for:</h3>
-            <form action="" id="edit-form">
+            <form action="" id="disease_Add-form">
                 <input type="text" id="edit-patient_id" name="edit-patient_id" style="display:none"><br>
 
                 <div class="input-container">
                     <label for="Name">Patient:</label>
-                    <input type="text" id="edit-first_name" name="edit-first_name" required disabled="true">
+                    <input type="text" id="edit-first_name" name="edit-first_name" required="true">
                 </div>
 
                 <div class="input-container">
-                    <label for="Name">Middle Name:</label>
-                    <input type="text" id="edit-middle_name" name="edit-middle_name" required disabled="true">
+                    <label for="Name">Disease:</label>
+                    <input type="text" id="disease_name" name="disease_name" required="true">
                 </div>
 
-               <div class="input-container">
-                <label for="Name">Last Name:</label><br>
-                <input type="text" id="edit-last_name" name="edit-last_name" required disabled="true"><br>
-               </div>
+                <div class="input-container">
+                    <label for="Name">Date Diagnosed:</label>
+                    <input type="date" id="diagnosis_date" name="diagnosis_date" required="true">
+                </div>
 
-               <div class="input-container">
-                <label for="title">Gender:</label><br>
-                <input type="text" id="edit-gender" name="edit-gender" disabled="true"><br>
-               </div>
+                <div class="input-container">
+                    <label for="Name">Status:</label>
+                    <input type="text" id="disease_status" name="disease_status" required="true">
+                </div>
 
-               <div class="input-container">
-                <label for="title">Purok:</label><br>
-                <input type="text" id="edit-purok" name="edit-purok" disabled="true"><br>
-               </div>
-
-               <div class="input-container">
-                <label for="title">Household:</label> <br>
-                <input type="text" id="edit-household" name="edit-household" disabled="true">
-               </div>
-
-               <div class="input-container">
-                <label for="title">Civil Status:</label><br>
-                <input type="text" id="edit-civil_status" name="edit-civil_status" disabled="true"><br>
-
-               </div>
-              
-               <div class="input-container">
-                <label for="title">Age</label> <br>
-                <input type="text" id="edit-age" name="edit-age" disabled="true"><br>
-               </div>
-
-               <div class="input-container">
-                <label for="title">Contact #:</label> <br>
-                <input type="text" id="edit-contact_number" name="edit-contact_number" disabled="true">
-               </div>
-
-              
-               <div class="input-container">
-                <label for="title">Blood Type:</label><br>
-                <input type="text" id="edit-blood_type" name="edit-blood_type" disabled="true"><br>
-               </div>
-              
+                <div class="input-container">
+                    <label for="Name">Disease Stage:</label>
+                    <input type="text" id="disease_stage" name="disease_stage">
+                </div>
              
                <div class="input-container"></div>
 

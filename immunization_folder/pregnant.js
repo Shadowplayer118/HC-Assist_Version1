@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 function loadTable() {
     $.ajax({
-        url: 'disease_load.php',
+        url: 'pregnant_load.php',
         method: 'GET',
         dataType: 'json',
         success: function(data) {
@@ -23,11 +23,11 @@ function loadTable() {
             tableBody.empty();
             $.each(data, function(index, row) {
                 var newRow = templateRow.clone();
-                newRow.find('.id').text(row.disease_id);
-                newRow.find('.name').text(row.first_name + " " + row.last_name);  
-                newRow.find('.position').text(row.diagnosis_date);
-                newRow.find('.contact_number').text(row.disease_status);
-                newRow.find('.actions').html('<button class="edit-btn" data-id="' + row.disease_id + '"><img src="../assets/mdi_eye.png" alt=""></button> <button class="delete-btn" data-id="' + row.disease_id + '">  <img src="../assets/Vector-1.png" alt=""> </button>');
+                newRow.find('.id').text(row.pregnant_id);
+                newRow.find('.name').text(row.pregnant_id + " " + row.pregnant_id);  
+                newRow.find('.position').text(row.pregnant_id);
+                newRow.find('.contact_number').text(row.pregnant_id);
+                newRow.find('.actions').html('<button class="edit-btn" data-id="' + row.pregnant_id + '"><img src="../assets/mdi_eye.png" alt=""></button> <button class="delete-btn" data-id="' + row.pregnant_id + '">  <img src="../assets/Vector-1.png" alt=""> </button>');
                 tableBody.append(newRow);
             });
         },

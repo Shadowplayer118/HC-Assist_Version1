@@ -55,37 +55,6 @@ $(window).click(function(event) {
     }
 });
 
-// Add disease
-$('#disease_Add-form').submit(function(event) {
-    event.preventDefault();
-
-    var formData = $(this).serialize();
-    console.log(formData);
-
-    $.ajax({
-        url: 'patient_add.php',
-        method: 'POST',
-        data: formData,
-        dataType: 'json',
-        success: function(response) {
-            console.log('Character added successfully: ', response);
-            $('#add-modal').hide();
-            // localStorage.setItem('nameInput','');
-            // document.getElementById('filtername').value = "";
-          window.location.href = 'disease.html';
-            
-            // loadTable();
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.error('Error adding character: ', textStatus, errorThrown);
-            location.reload();
-            alert('Failed to add character, please try againsss.');
-        }
-    });
-});
-
-
-
 
 // Add character
 $('#addForm').submit(function(event) {

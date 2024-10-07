@@ -1,9 +1,7 @@
 <?php
 include '../connection.php';
 
-$sqlQuery = "Select contagious_disease.disease_id, patient.first_name, patient.last_name, 
-contagious_disease.diagnosis_date, contagious_disease.disease_status from contagious_disease inner join patient
-on contagious_disease.patient_id = patient.patient_id ORDER BY disease_id DESC";
+$sqlQuery = "Select * from pregnant ORDER BY pregnant_id DESC";
 $result = mysqli_query($conn,$sqlQuery);
 
 
