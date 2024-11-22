@@ -7,18 +7,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Prepare and execute the statement for staff login
-    $stmt = $conn->prepare("SELECT first_name, last_name, position, password FROM staff WHERE username = ? AND password = ?");
+    $stmt = $conn->prepare("SELECT first_name, last_name, position FROM staff WHERE username = ? AND password = ?");
     $stmt->bind_param("ss", $username, $password);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows == 1) {
-        $stmt->bind_result($first_name, $position, $password); // Bind the result to variables
+        $stmt->bind_result($first_name, $last_name, $position); // Bind the result to variables
         $stmt->fetch(); // Fetch the result
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
         $_SESSION['position'] = $position; // Store the userType in the session
         $_SESSION['first_name'] = $first_name; // Store the first name in session
+        $_SESSION['last_name'] = $last_name; // Store the last name in session
         
         if ($position == 'Admin') {
             header('Location: Admin_Side/dashboard_folder/dashboard.html');

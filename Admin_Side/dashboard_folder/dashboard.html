@@ -132,6 +132,31 @@
 <!---------MAIN-------------------------------------------------------------------------------------------------------------->        
         <div class="main">
             <div class="main-container">
+                
+            <div class="records-modal">
+                <div class="records-modal-content">
+                    <div class="table-container">
+                        <h2 class="table-title">Healthcare Records</h2>
+                        <div class="healthRec-table"></div>
+                        <table class="styled-table" id="healthcare-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Total Count</th>
+                                </tr>
+                            </thead>
+                            <tbody id="records-body">
+                                
+                            </tbody>
+                        </table>
+                        <div class="button-actions">
+                            <button class="print" id="printTableBtn">Print</button>
+                            <button class="print">Full View</button>
+                            <button class="print" id="closeRecordsModalBtn">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
                 <div class="main-top">
                     <div class="general-report-label">Genral Report</div>
@@ -243,8 +268,11 @@
         </div>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src = "../jquery.js"></script>
+    <script src = "dashboard_true.js"></script>
 
-<script src = "dashboard_true.js"></script>
 </body>
 </html>
